@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/student")
 public class StudentController {
@@ -30,5 +32,11 @@ public class StudentController {
     @GetMapping("/message")
     public String getMessage(){
         return "Welcome to ci-cd course";
+    }
+
+    @GetMapping("/get-all-registers")
+    public ResponseEntity<List<Student>> getAllRegisteredStudents(){
+        List<Student> students = studentService.getAllStudents();
+        return ResponseEntity.status(HttpStatus.OK).body(students);
     }
 }
