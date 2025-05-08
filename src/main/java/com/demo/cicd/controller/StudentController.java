@@ -34,7 +34,7 @@ public class StudentController {
         return "Welcome to ci-cd course";
     }
 
-    @GetMapping("/registered-list")
+    @GetMapping("/get-all-registers")
     public ResponseEntity<List<Student>> getAllRegisteredStudents(){
         List<Student> students = studentService.getAllStudents();
         return ResponseEntity.status(HttpStatus.OK).body(students);
