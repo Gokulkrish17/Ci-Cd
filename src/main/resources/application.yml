@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: cicd
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/student_details
+    username: root
+    password: Gokul@123
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
+
+server:
+  port: 6060
