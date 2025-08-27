@@ -1,19 +1,18 @@
-version: "3.8"
-
 services:
   mysql:
-    image: mysql:latest
+    image: mysql:8
     container_name: mysql-container
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: Gokul@123
       MYSQL_DATABASE: student_details
     ports:
-      - "3307:3306"
+      - "3307:3306"  # Host port 3307, container port 3306
     volumes:
       - mysql-data:/var/lib/mysql
 
   app:
-    build: .
+    image: ci_cd_demo-app
     container_name: my-cicd-demo
     depends_on:
       - mysql
@@ -23,7 +22,6 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/student_details
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: Gokul@123
-    restart: always
 
 volumes:
   mysql-data:
