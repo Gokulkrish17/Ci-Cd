@@ -31,7 +31,7 @@ public class StudentController {
 
     @GetMapping("/message")
     public String getMessage(){
-        return "Welcome to ci-cd course, We will teach you CI_CD core concept, Sit back, learn and enjoy";
+        return "Welcome to ci-cd course, We will teach you CI_CD core concept and Docker. Sit back, learn and enjoy";
     }
 
     @GetMapping("/registered-list")
